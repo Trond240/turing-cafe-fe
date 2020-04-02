@@ -1,5 +1,6 @@
 import React from 'react';
-import { Reservations } from '../Reservations/Reservations'
+import { Reservations } from '../Reservations/Reservations';
+import '/Users/trondmakonese/mod_3/mid-mod-assesment/turing-cafe-ui/src/ReservationContainer/ReservstionsContainer.css';
 
 export const ReservationsContainer = (props) => {
   console.log(props.reservations)
@@ -16,7 +17,7 @@ export const ReservationsContainer = (props) => {
   })
 
   return (
-    <section>
+    <section className='reservation-container'>
       {allReservations}
     </section>
   )
