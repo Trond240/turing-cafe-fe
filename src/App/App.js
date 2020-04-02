@@ -10,10 +10,15 @@ class App extends Component {
     }
   }
 
-  componentDidMount() {
+  retrieveReservations() {
     fetchReservations()
     .then(data => this.setState({reservations: data}))
     .catch(err => console.log(err))
+  }
+
+
+  componentDidMount() {
+    this.retrieveReservations()
   }
 
   render() {
