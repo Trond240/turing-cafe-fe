@@ -8,7 +8,7 @@ class AddReservation extends Component {
       id: '',
       name: '',
       number: '',
-      time: '',
+      time: ''
     }
   }
 
@@ -21,6 +21,17 @@ class AddReservation extends Component {
     const { addNewReservation } = this.props;
     const newReservation = {...this.state, id: Date.now()}
     addNewReservation(newReservation);
+    this.resetInput();
+  }
+
+  resetInput() {
+    this.state =({
+      date: '',
+      id: '',
+      name: '',
+      number: '',
+      time: ''
+    })
   }
 
   render() {
