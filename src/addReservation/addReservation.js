@@ -1,9 +1,9 @@
-import React, { Component } form 'react';
+import React, { Component } from 'react';
 
 
-class AddReservation extends Componet {
+class AddReservation extends Component {
   constructor() {
-    suoer();
+    super();
     this.state = {
       date: '',
       id: '',
@@ -13,6 +13,10 @@ class AddReservation extends Componet {
     }
   }
 
+  handleChange = e => {
+    this.setState({[e.target.name]: e.target.value})
+  }
+
   render() {
     return(
       <form>
@@ -20,25 +24,25 @@ class AddReservation extends Componet {
         type='text'
         placeholder='name'
         name='name'
-        onChnage={}
+        onChnage={this.handleChange}
         />
         <input
         type='text'
         placeholder='name'
         name='name'
-        onChnage={}
+        onChnage={this.handleChange}
         />
         <input
         type='time'
         placeholder='choose a time'
         name='time'
-        onChnage={}
+        onChnage={this.handleChange}
         />
         <input
         type='number'
         placeholder='number of guest'
         name='number'
-        onChnage={}
+        onChnage={this.handleChange}
         />
         <button>Book Reservation</button>
       </form>
