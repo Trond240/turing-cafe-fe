@@ -12,6 +12,11 @@ class App extends Component {
     }
   }
 
+  addNewReservation = newReservation => {
+    console.log('reservatons', this.state.reservations)
+    this.setState({ reservations: [...this.state.reservations, newReservation]})
+  }
+
   retrieveReservations() {
     fetchReservations()
     .then(data => this.setState({reservations: data}))
@@ -28,7 +33,7 @@ class App extends Component {
       <div className="App">
         <h1 className='app-title'>Turing Cafe Reservations</h1>
         <div className='resy-form'>
-          <AddReservation />
+          <AddReservation addNewReservation={this.addNewReservation}/>
         </div>
         <div className='resy-container'>
           <ReservationsContainer reservations={this.state.reservations}/>

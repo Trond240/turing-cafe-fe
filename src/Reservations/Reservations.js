@@ -7,7 +7,7 @@ export const Reservations = (props) => {
       <h1>{props.name}</h1>
       <p>{props.date}</p>
       <p>{props.time} pm</p>
-      <p>Reservation Number: {props.number}</p>
+      <p>Number of Guest: {props.number}</p>
     </article>
   )
 }

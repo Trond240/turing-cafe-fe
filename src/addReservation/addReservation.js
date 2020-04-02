@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 
-
 class AddReservation extends Component {
   constructor() {
     super();
@@ -9,7 +8,7 @@ class AddReservation extends Component {
       id: '',
       name: '',
       number: '',
-      time: ''
+      time: '',
     }
   }
 
@@ -17,34 +16,41 @@ class AddReservation extends Component {
     this.setState({[e.target.name]: e.target.value})
   }
 
+  submitNewReservation = e => {
+    e.preventDefault();
+    const { addNewReservation } = this.props;
+    const newReservation = {...this.state, id: Date.now()}
+    addNewReservation(newReservation);
+  }
+
   render() {
     return(
       <form>
         <input
         type='text'
-        placeholder='name'
+        placeholder='Name'
         name='name'
-        onChnage={this.handleChange}
+        onChange={this.handleChange}
         />
         <input
         type='text'
-        placeholder='name'
-        name='name'
-        onChnage={this.handleChange}
+        placeholder='Date (mm/dd)'
+        name='date'
+        onChange={this.handleChange}
         />
         <input
-        type='time'
-        placeholder='choose a time'
+        type='text'
+        placeholder='Time'
         name='time'
-        onChnage={this.handleChange}
+        onChange={this.handleChange}
         />
         <input
-        type='number'
-        placeholder='number of guest'
-        name='number'
-        onChnage={this.handleChange}
+        type='text'
+        placeholder='number of guests'
+        name='number of guests'
+        onChange={this.handleChange}
         />
-        <button>Book Reservation</button>
+        <button onClick={this.submitNewReservation}>Book Reservation</button>
       </form>
     )
   }
