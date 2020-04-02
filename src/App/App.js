@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import { fetchReservations } from '../ApiCalls/ApiCalls'
 
 class App extends Component {
   constructor() {
@@ -8,7 +9,12 @@ class App extends Component {
       reservations: []
     }
   }
-  
+
+  componentDidMount() {
+    fetchReservations()
+    .then(data => console.log(data))
+  }
+
   render() {
     return (
       <div className="App">
